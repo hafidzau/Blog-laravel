@@ -1,0 +1,115 @@
+{
+    "openapi":"3.1.0",
+    "info": {
+        "title": "User API",
+        "description": "User API",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http:localhost:8080"
+        }
+    ],
+    "paths": {
+        "/api/users" : {
+            "post": {
+              "description": "register new user",
+              "requestBody":{
+                "content":{
+                   "application/json":{
+                     "examples":{
+                       "ian":{
+                         "description": "login user ian",
+                         "value":{
+                           "username": "ian",
+                           "password": "rahasia",
+                           "name": "ian hafiz"
+                         }
+                       }
+                     },
+                      "schema":{
+                         "type": "object",
+                         "required": [
+                           "name", "password", "username"
+                           ],
+                         "properties": {
+                           "username": {
+                             "type":"string"
+                           },
+                           "password":{
+                             "type": "string"
+                           },
+                           "name":{
+                             "type": "string"
+                           }
+                         }
+                   }
+                   }
+                }
+              },
+              "responses":{
+                "201":{
+                  "description":"succes register",
+                  "content":{
+                    "application/json":{
+                      "examples":{
+                        "success":{
+                          "description" : "succes register",
+                          "value":{
+                            "data":{
+                              "id":1,
+                              "name":"ian hafiz",
+                              "username":"ian"
+                            }
+                          }
+                        }
+                      },
+                      "schema":{
+                        "type": "object",
+                        "properties":{
+                          "data":{
+                            "type":"object",
+                            "properties":{
+                              "id":{
+                                "type":"number"
+                              },
+                              "username":{
+                                "type":"string"
+                              },
+                              "name":{
+                                "type":"string"
+                              }
+                            }
+                          },
+                          "errors":{
+                            "type":"object"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+        },
+        "/api/users/login": {
+          "post": {
+            "description": "login user"
+          }
+        },
+        "/api/user/current": {
+          "get": {
+            "description": "get current user"
+          },
+          "patch": {
+            "description": "update current user"
+          }
+        },
+        "/api/users/logout" : {
+          "delete":{
+            "description": "log out current user"
+          }
+        }
+    }
+
+}
