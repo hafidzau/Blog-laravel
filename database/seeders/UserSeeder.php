@@ -18,6 +18,7 @@ class UserSeeder extends Seeder
     User::create([
         'name'=>'hafidz aulia urrahman',
         'username'=>'hafidz',
+        'username_ig'=>'hafidzau',
         'email'=>'hafidz@gmail.com',
         'email_verified_at'=>now(),
         'password'=>Hash::make('password'),
@@ -26,6 +27,7 @@ class UserSeeder extends Seeder
     User::create([
         'name'=>'ian hafiz rahman',
         'username'=>'ian',
+        'username_ig'=>'ianhafizrac',
         'email'=>'ian@gmail.com',
         'email_verified_at'=>now(),
         'password'=>Hash::make('password'),
@@ -34,6 +36,7 @@ class UserSeeder extends Seeder
     User::create([
         'name'=>'muhammad syafiq alfarensi',
         'username'=>'syafiq',
+        'username_ig'=>'syfq.mp4',
         'email'=>'syafiq@gmail.com',
         'email_verified_at'=>now(),
         'password'=>Hash::make('password'),

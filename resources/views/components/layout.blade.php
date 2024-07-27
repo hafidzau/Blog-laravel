@@ -10,24 +10,20 @@
     <title>home</title>
 </head>
 <body class="h-full">
+  <div class="min-h-full">
 
-<div class="min-h-full">
-
+    @if (session()->has('success'))
+      <x-alert></x-alert>
+    @endif
+    
     <x-navbar></x-navbar>
-
-
+  
     <x-header>{{ $judul }}</x-header>
     <main>
       <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         {{ $slot }}
       </div>
     </main>
- 
-  
-
-
-
-  </div>
-  
+  </div>  
 </body>
 </html>
